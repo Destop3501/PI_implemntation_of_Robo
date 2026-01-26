@@ -18,7 +18,7 @@ setup(
     zip_safe=True,
     maintainer='ruwan',
     maintainer_email='ruwan@todo.todo',
-    description='TODO: Package description',
+    description='A hand controller transmitter for Pi using Mediapipe and PiCamera v2',
     license='TODO: License declaration',
     extras_require={
         'test': [
@@ -27,15 +27,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'stream_publisher = camera_streamer.stream_publisher:main',
-            'web_cam = camera_streamer.web_cam:main',
             'handshake_broadcaster = camera_streamer.handshake_broadcaster:main',
-            'tf2_runner=camera_streamer.tf2_runner1:main',
-            'mediapipe_identifier=camera_streamer.mediapipe_identifier1:main',
-            'mediapipe_bridge=camera_streamer.mediapipe_bridge:main',
-            'Watch_the_hand = camera_streamer.Watch_the_hand:main',
-            'socket_reciever=camera_streamer.socket_reciever:main',
-            'fully_script_of_rotation=camera_streamer.fully_script_of_rotation:main'
+            'mediapipe_detector = camera_streamer.mediapipe_detector:main',
         ],
     },
 )
