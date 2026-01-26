@@ -1,0 +1,29 @@
+# ROS2 Build Artifacts
+build/
+install/
+log/
+src/log/
+
+# Python virtual environments
+mediapipevenv*/
+.venv/
+env/
+venv/
+ENV/
+
+# Python compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE files
+.vscode/
+.idea/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Other
+*.bak
+*.tmp

@@ -1,0 +1,10 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: nema_description
+    relative_path: urdf/model.urdf.xacro
+  SRDF:
+    relative_path: config/nema_robot.srdf
+  CONFIG:
+    author_name: ruwan
+    author_email: ruwan@todo.com
+    generated_timestamp: 1734048000

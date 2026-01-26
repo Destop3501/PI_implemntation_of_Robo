@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <joint name="fixed" type="fixed">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <parent link="world"/>
+        <child link="base_link"/>
+    </joint>
+
+    <joint name="body_joint" type="revolute">
+        <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-0.8" soft_upper_limit="0.8"/>
+        <origin rpy="0 0 0" xyz="0 0 0.100"/>
+        <parent link="base_link"/>
+        <child link="body_link"/>
+        <axis xyz="0 0 1"/>
+        <limit effort="5" lower="-0.85" upper="0.85" velocity="0.3"/>
+    </joint>
+
+    <joint name="face_joint_z" type="revolute">
+        <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-0.8" soft_upper_limit="0.8"/>
+        <origin rpy="0 0 0" xyz="0 0 0.400"/>
+        <parent link="body_link"/>
+        <child link="face_intermediate_link"/>
+        <axis xyz="0 0 1"/> 
+        <limit effort="30.0" lower="-0.85" upper="0.85" velocity="10.0"/>
+    </joint>
+
+    <joint name="face_joint_x" type="revolute">
+        <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-0.8" soft_upper_limit="0.8"/>
+        <origin rpy="0 0 0" xyz="0 0 0.0"/> 
+        <parent link="face_intermediate_link"/>
+        <child link="face_link"/>
+        <axis xyz="1 0 0"/> 
+        <limit effort="5" lower="-0.85" upper="0.85" velocity="0.25"/>
+    </joint>
+
+    <joint name="right_joint1" type="revolute">
+        <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="0" soft_upper_limit="0.8"/>
+        <origin rpy="0.02 0 0" xyz="0.200 0 0.300"/>
+        <parent link="body_link"/>
+        <child link="right_arm1"/>
+        <axis xyz="1 0 0"/>
+        <limit effort="30.0" lower="-0.05" upper="0.85" velocity="10.0"/>
+    </joint>
+    <joint name="right_joint2" type="revolute">
+        <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="0" soft_upper_limit="0.4"/>
+        <origin rpy="0.02 0 0" xyz="0.050 0 -0.125"/>
+        <parent link="right_arm1"/>
+        <child link="right_arm2"/>
+        <axis xyz="1 0 0"/>
+        <limit effort="30.0" lower="-0.05" upper="0.45" velocity="10.0"/>
+    </joint>
+    <joint name="right_joint3" type="revolute">
+        <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="0" soft_upper_limit="0.2"/>
+        <origin rpy="0.02 0 0" xyz="0.050 0 -0.055"/>
+        <parent link="right_arm2"/>
+        <child link="right_arm3"/>
+        <axis xyz="1 0 0"/>
+        <limit effort="30.0" lower="-0.05" upper="0.25" velocity="10.0"/>
+    </joint>
+
+    <joint name="left_joint1" type="revolute">
+        <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="0" soft_upper_limit="0.8"/>
+        <origin rpy="0.02 0 0" xyz="-0.200 0 0.300"/>
+        <parent link="body_link"/>
+        <child link="left_arm1"/>
+        <axis xyz="1 0 0"/>
+        <limit effort="30.0" lower="-0.05" upper="0.85" velocity="10.0"/>
+    </joint>
+    <joint name="left_joint2" type="revolute">
+        <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="0" soft_upper_limit="0.4"/>
+        <origin rpy="0.02 0 0" xyz="-0.050 0 -0.125"/>
+        <parent link="left_arm1"/>
+        <child link="left_arm2"/>
+        <axis xyz="1 0 0"/>
+        <limit effort="30.0" lower="-0.05" upper="0.45" velocity="10.0"/>
+    </joint>
+    <joint name="left_joint3" type="revolute">
+        <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="0" soft_upper_limit="0.2"/>
+        <origin rpy="0.02 0 0" xyz="-0.050 0 -0.055"/>
+        <parent link="left_arm2"/>
+        <child link="left_arm3"/>
+        <axis xyz="1 0 0"/>
+        <limit effort="30.0" lower="-0.05" upper="0.25" velocity="10.0"/>
+    </joint>
+
+</robot>

@@ -1,0 +1,11 @@
+# Default initial positions for nema_robot's ros2_control fake system
+
+initial_positions:
+  body_joint: 0
+  face_joint_x: 0
+  left_joint1: 0
+  left_joint2: 0
+  left_joint3: 0
+  right_joint1: 0
+  right_joint2: 0
+  right_joint3: 0

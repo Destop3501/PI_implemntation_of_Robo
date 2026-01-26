@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<robot name="NEma" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:include filename="$(find nema_description)/urdf/body.xacro" />
+    <xacro:include filename="$(find nema_description)/urdf/arm.xacro" />
+    <xacro:include filename="$(find nema_description)/urdf/joints.xacro" />
+    <xacro:include filename="$(find nema_description)/urdf/camera.xacro" />
+    <xacro:include filename="$(find nema_description)/urdf/gazebo.xacro" />
+    <xacro:include filename="$(find nema_description)/urdf/robot_controllers.xacro" />
+</robot>

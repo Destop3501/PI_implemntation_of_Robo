@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  nema_controller:
+    build: .
+    image: nema-pi:latest
+    container_name: nema_controller
+    privileged: true
+    network_mode: "host"
+    ipc: "host"
+    environment:
+      - DISPLAY=${DISPLAY:-:0}
+      - QT_X11_NO_MITSHM=1
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ./src:/workspace/src
+      - /dev/shm:/dev/shm
+    devices:
+      - "/dev/video0:/dev/video0"
+      - "/dev/vchiq:/dev/vchiq"
+      - "/dev/gpiomem:/dev/gpiomem"
+    command: bash -c "colcon build --symlink-install && source install/setup.bash && ros2 launch camera_streamer handshake_system.launch.py"
