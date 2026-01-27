@@ -19,4 +19,4 @@ services:
       - "/dev/video0:/dev/video0"
       - "/dev/vchiq:/dev/vchiq"
       - "/dev/gpiomem:/dev/gpiomem"
-    command: bash -c "colcon build --symlink-install && source install/setup.bash && ros2 launch camera_streamer handshake_system.launch.py"
+    command: tail -f /dev/null
