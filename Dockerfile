@@ -8,10 +8,10 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y \
     python3-pip \
     python3-opencv \
-    python3-picamera2 \
     libcamera-dev \
     libcamera-tools \
-    libgl1-mesa-glx \
+    libgl1 \
+    libglx-mesa0 \
     libglib2.0-0 \
     x11-apps \
     && rm -rf /var/lib/apt/lists/*
@@ -20,7 +20,8 @@ RUN apt-get update && apt-get install -y \
 RUN pip3 install --no-cache-dir \
     mediapipe \
     numpy \
-    setuptools
+    setuptools \
+    picamera2
 
 # Install ROS2 Desktop components (for Rviz if needed, though we use base for now)
 # User wants "everything inside the pi", so we add common tools
