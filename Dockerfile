@@ -27,7 +27,7 @@ RUN pip3 install --no-cache-dir --break-system-packages \
 # Install ROS2 Desktop components (for Rviz if needed, though we use base for now)
 # User wants "everything inside the pi", so we add common tools
 RUN apt-get update && apt-get install -y \
-    ros-jazzy-desktop-base \
+    ros-jazzy-desktop \
     ros-jazzy-tf2-ros \
     ros-jazzy-geometry-msgs \
     ros-jazzy-trajectory-msgs \
