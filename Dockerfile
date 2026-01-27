@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
     python3-opencv \
     libcamera-dev \
     libcamera-tools \
+    libcap-dev \
     libgl1 \
     libglx-mesa0 \
     libglib2.0-0 \
