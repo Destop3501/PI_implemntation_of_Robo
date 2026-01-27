@@ -24,6 +24,9 @@ RUN pip3 install --no-cache-dir --break-system-packages \
     setuptools \
     picamera2
 
+# Pre-download MediaPipe models to avoid runtime download issues
+RUN python3 -c "import mediapipe as mp; mp.solutions.hands.Hands(model_complexity=0); mp.solutions.pose.Pose(model_complexity=0)"
+
 # Install ROS2 Desktop components (for Rviz if needed, though we use base for now)
 # User wants "everything inside the pi", so we add common tools
 RUN apt-get update && apt-get install -y \
