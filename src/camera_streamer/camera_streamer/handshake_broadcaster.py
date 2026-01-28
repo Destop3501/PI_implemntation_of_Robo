@@ -64,8 +64,8 @@ class HandshakeBroadcaster(Node):
         self.W_WIDTH = 0.06  # FIXED: 6cm (0.06m) average hand width, not 6 meters!
         self.FINGER_JOINTS = [[5, 6, 8], [9, 10, 12], [13, 14, 16], [17, 18, 20]]
 
-        # Frequency synced to ros2_controllers.yaml (100Hz = 0.01s)
-        self.timer = self.create_timer(0.01, self.main_loop)
+        # Frequency synced to ros2_controllers.yaml (20Hz = 0.05s)
+        self.timer = self.create_timer(0.05, self.main_loop)
 
         self.get_logger().info("HandshakeBroadcaster initialized for Raspberry Pi 4.")
 

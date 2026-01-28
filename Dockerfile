@@ -7,7 +7,6 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Install dependencies for MediaPipe, OpenCV, and PiCamera
 RUN apt-get update && apt-get install -y \
     python3-pip \
-    python3-opencv \
     libcamera-dev \
     libcamera-tools \
     libcap-dev \
